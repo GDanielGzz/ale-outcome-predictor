@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software in your work, please cite it as below."
+type: software
+title: "ALE outcome predictor — GSM-flux + ESM2 sequence-fusion prediction of adaptive-laboratory-evolution gene targets"
+abstract: >-
+  A predictor that ranks which genes a microbial genome is most likely to
+  mutate under a defined adaptive-laboratory-evolution (ALE) selection,
+  conditioned on genome-scale metabolic-model (GSM) flux features and ESM2
+  protein-sequence embeddings. Trained and evaluated end-to-end on five real
+  ALEdb E. coli selections (86 convergent positives) with leakage-free
+  cluster-aware cross-validation. Flux features represent real convergence
+  in-distribution but are bounded by flux-degeneracy and blind to the
+  regulatory and structural majority of targets; fusing flux with ESM2
+  sequence embeddings beats flux alone in roughly 73% of CV seeds by
+  recovering flux-blind genes. A proof-of-concept on a deliberately small
+  curated corpus that drops onto the full ALEdb when pulled locally.
+authors:
+  - family-names: "González Lozano"
+    given-names: "Daniel"
+    orcid: "https://orcid.org/0009-0002-1737-276X"
+    email: "sleepy.komodo@protonmail.com"
+    affiliation: "Tecnológico de Monterrey, Monterrey, Mexico"
+version: "v0.1-portfolio-snapshot"
+date-released: "2026-06-10"
+license: MIT
+url: "https://github.com/GDanielGzz/ale-outcome-predictor"
+repository-code: "https://github.com/GDanielGzz/ale-outcome-predictor"
+keywords:
+  - "adaptive laboratory evolution"
+  - "ALEdb"
+  - "genome-scale metabolic model"
+  - "flux balance analysis"
+  - "ESM2"
+  - "protein language model"
+  - "machine learning"
+  - "Escherichia coli"
+  - "cluster-aware cross-validation"
+  - "negative results reporting"
+  - "bioinformatics"
