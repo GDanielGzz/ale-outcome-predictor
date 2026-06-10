@@ -1,0 +1,206 @@
+{
+  "meta": {
+    "gsm": "iJO1366",
+    "n_genes": 1367,
+    "n_conditions": 5,
+    "n_rows": 6835,
+    "n_positive": 86,
+    "backend": "lightgbm",
+    "n_train": 6835
+  },
+  "gsm_coverage": {
+    "targets_total": 86,
+    "targets_in_gsm": 86,
+    "coverage_fraction": 1.0,
+    "note": "Regulatory/non-metabolic convergent ALE hotspots (rpoB, rpoC, rho, hns, ...) are out of any metabolic model by construction; this corpus is pre-filtered to in-GSM genes, so coverage here is 1.0 by design and the real ceiling is set by how many literature targets were metabolic in the first place (see corpus/CURATION.md 'GSM-coverage gap')."
+  },
+  "cluster_cv_per_condition": {
+    "acetate defined medium 37C": {
+      "model@10": 0.0,
+      "baseline@10": 0.0,
+      "folds": 3
+    },
+    "glucose M9 benzoate stress 37C": {
+      "model@10": 0.0,
+      "baseline@10": 0.04,
+      "folds": 5
+    },
+    "glucose M9 minimal 37C": {
+      "model@10": 0.04,
+      "baseline@10": 0.0,
+      "folds": 5
+    },
+    "glucose M9 minimal 42C thermal": {
+      "model@10": 0.1461111111111111,
+      "baseline@10": 0.055,
+      "folds": 5
+    },
+    "glycerol M9 minimal 37C": {
+      "model@10": 0.0,
+      "baseline@10": 0.0,
+      "folds": 2
+    }
+  },
+  "indistribution_top10_recovery": {
+    "acetate defined medium 37C": 4,
+    "glucose M9 benzoate stress 37C": 8,
+    "glucose M9 minimal 37C": 9,
+    "glucose M9 minimal 42C thermal": 9,
+    "glycerol M9 minimal 37C": 7
+  },
+  "cluster_aware_cv_vs_baseline": [
+    {
+      "fold": 0,
+      "n_test": 1370,
+      "n_pos": 29,
+      "model@10": 0.0266666667,
+      "baseline@10": 0.0133333333,
+      "model@25": 0.0488888889,
+      "baseline@25": 0.0133333333
+    },
+    {
+      "fold": 1,
+      "n_test": 1370,
+      "n_pos": 21,
+      "model@10": 0.065,
+      "baseline@10": 0.065,
+      "model@25": 0.105,
+      "baseline@25": 0.065
+    },
+    {
+      "fold": 2,
+      "n_test": 1365,
+      "n_pos": 15,
+      "model@10": 0.0833333333,
+      "baseline@10": 0.0277777778,
+      "model@25": 0.1111111111,
+      "baseline@25": 0.0277777778
+    },
+    {
+      "fold": 3,
+      "n_test": 1365,
+      "n_pos": 6,
+      "model@10": 0.0,
+      "baseline@10": 0.0,
+      "model@25": 0.1666666667,
+      "baseline@25": 0.0
+    },
+    {
+      "fold": 4,
+      "n_test": 1365,
+      "n_pos": 15,
+      "model@10": 0.0555555556,
+      "baseline@10": 0.0,
+      "model@25": 0.0833333333,
+      "baseline@25": 0.0833333333
+    }
+  ],
+  "cluster_aware_cv_means": {
+    "model@10": 0.04611111111111111,
+    "baseline@10": 0.021222222222222222,
+    "model@25": 0.10300000000000001,
+    "baseline@25": 0.03788888888888889
+  },
+  "leave_one_condition_out": [
+    {
+      "held_out_condition": "acetate defined medium 37C",
+      "n_test": 1367,
+      "model_recall@10": 0.0,
+      "baseline_recall@10": 0.0,
+      "ratio@10": null,
+      "model_recall@25": 0.0,
+      "baseline_recall@25": 0.0,
+      "ratio@25": null
+    },
+    {
+      "held_out_condition": "glucose M9 benzoate stress 37C",
+      "n_test": 1367,
+      "model_recall@10": 0.0,
+      "baseline_recall@10": 0.0,
+      "ratio@10": null,
+      "model_recall@25": 0.0,
+      "baseline_recall@25": 0.0,
+      "ratio@25": null
+    },
+    {
+      "held_out_condition": "glucose M9 minimal 37C",
+      "n_test": 1367,
+      "model_recall@10": 0.1052631579,
+      "baseline_recall@10": 0.0,
+      "ratio@10": null,
+      "model_recall@25": 0.1052631579,
+      "baseline_recall@25": 0.0,
+      "ratio@25": null
+    },
+    {
+      "held_out_condition": "glucose M9 minimal 42C thermal",
+      "n_test": 1367,
+      "model_recall@10": 0.0434782609,
+      "baseline_recall@10": 0.0,
+      "ratio@10": null,
+      "model_recall@25": 0.0869565217,
+      "baseline_recall@25": 0.0,
+      "ratio@25": null
+    },
+    {
+      "held_out_condition": "glycerol M9 minimal 37C",
+      "n_test": 1367,
+      "model_recall@10": 0.0,
+      "baseline_recall@10": 0.0,
+      "ratio@10": null,
+      "model_recall@25": 0.0,
+      "baseline_recall@25": 0.0,
+      "ratio@25": null
+    }
+  ],
+  "top_features": [
+    {
+      "feature": "fva_max_abs_flux",
+      "importance": 191.0
+    },
+    {
+      "feature": "fva_max_span",
+      "importance": 166.0
+    },
+    {
+      "feature": "n_reactions",
+      "importance": 125.0
+    },
+    {
+      "feature": "gpr_max_complex_size",
+      "importance": 77.0
+    },
+    {
+      "feature": "temperature_c",
+      "importance": 64.0
+    },
+    {
+      "feature": "gpr_n_isozyme_groups",
+      "importance": 55.0
+    },
+    {
+      "feature": "stress_class=none",
+      "importance": 46.0
+    },
+    {
+      "feature": "ko_growth_ratio",
+      "importance": 40.0
+    },
+    {
+      "feature": "subsystem_count",
+      "importance": 34.0
+    },
+    {
+      "feature": "n_blocked_reactions",
+      "importance": 33.0
+    },
+    {
+      "feature": "stress_class=aromatic",
+      "importance": 25.0
+    },
+    {
+      "feature": "carries_flux_at_optimum",
+      "importance": 21.0
+    }
+  ]
+}

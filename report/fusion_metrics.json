@@ -1,0 +1,36 @@
+{
+  "seq_source": "ESM (480-dim)",
+  "sequence_coverage": 1.0,
+  "recall_at_10": {
+    "flux": {
+      "per_condition": {
+        "glucose M9 minimal 42C thermal": 0.1461111111111111,
+        "glycerol M9 minimal 37C": 0.0,
+        "glucose M9 benzoate stress 37C": 0.0,
+        "glucose M9 minimal 37C": 0.04,
+        "acetate defined medium 37C": 0.0
+      },
+      "macro": 0.037222222222222226
+    },
+    "seq": {
+      "per_condition": {
+        "glucose M9 minimal 42C thermal": 0.08555555555555555,
+        "glycerol M9 minimal 37C": 0.0,
+        "glucose M9 benzoate stress 37C": 0.1,
+        "glucose M9 minimal 37C": 0.06222222222222222,
+        "acetate defined medium 37C": 0.0
+      },
+      "macro": 0.049555555555555554
+    },
+    "fused": {
+      "per_condition": {
+        "glucose M9 minimal 42C thermal": 0.08277777777777777,
+        "glycerol M9 minimal 37C": 0.0,
+        "glucose M9 benzoate stress 37C": 0.0,
+        "glucose M9 minimal 37C": 0.02222222222222222,
+        "acetate defined medium 37C": 0.3333333333333333
+      },
+      "macro": 0.08766666666666666
+    }
+  }
+}

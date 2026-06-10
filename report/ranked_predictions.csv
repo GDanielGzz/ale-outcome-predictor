@@ -1,0 +1,76 @@
+gene,selection_condition,probability,gene_name,is_known_target
+b1243,acetate defined medium 37C,0.9347948673940605,oppA,True
+b3564,acetate defined medium 37C,0.44266674764188196,xylB,True
+b2010,acetate defined medium 37C,0.1833233322488353,dacD,True
+b0839,acetate defined medium 37C,0.1833233322488353,,False
+b0632,acetate defined medium 37C,0.1833233322488353,,False
+b0831,acetate defined medium 37C,0.14789379691140306,,False
+b0832,acetate defined medium 37C,0.14789379691140306,,False
+b0829,acetate defined medium 37C,0.14789379691140306,,False
+b0830,acetate defined medium 37C,0.14789379691140306,gsiB,True
+b2533,acetate defined medium 37C,0.01498485927044668,,False
+b1002,acetate defined medium 37C,0.01498485927044668,,False
+b0980,acetate defined medium 37C,0.01498485927044668,,False
+b0480,acetate defined medium 37C,0.011385038919647728,,False
+b4055,acetate defined medium 37C,0.011385038919647728,,False
+b3182,acetate defined medium 37C,0.011238293573644765,,False
+b1136,glucose M9 benzoate stress 37C,0.8960354000456432,icd,True
+b0529,glucose M9 benzoate stress 37C,0.639033418013885,folD,True
+b2323,glucose M9 benzoate stress 37C,0.49963013316675076,fabB,True
+b0621,glucose M9 benzoate stress 37C,0.31009073486914723,dcuC,True
+b2215,glucose M9 benzoate stress 37C,0.2939753028320463,,False
+b0929,glucose M9 benzoate stress 37C,0.2939753028320463,ompF,True
+b3115,glucose M9 benzoate stress 37C,0.23915419872935326,tdcD,True
+b1849,glucose M9 benzoate stress 37C,0.23915419872935326,,False
+b3564,glucose M9 benzoate stress 37C,0.17764840030756487,xylB,True
+b1623,glucose M9 benzoate stress 37C,0.15021241952029998,add,True
+b4015,glucose M9 benzoate stress 37C,0.1409273529122183,aceA,True
+b4077,glucose M9 benzoate stress 37C,0.11573125147055682,gltP,True
+b1014,glucose M9 benzoate stress 37C,0.06746195796569364,putA,True
+b0411,glucose M9 benzoate stress 37C,0.06355827551639834,tsx,True
+b2297,glucose M9 benzoate stress 37C,0.06238994115110093,pta,True
+b0221,glucose M9 minimal 37C,0.827183499513393,fadE,True
+b0123,glucose M9 minimal 37C,0.530121158036347,cueO,True
+b3816,glucose M9 minimal 37C,0.24019333239666374,corA,True
+b4077,glucose M9 minimal 37C,0.21785887223812161,gltP,True
+b3564,glucose M9 minimal 37C,0.18193312499904693,xylB,True
+b1676,glucose M9 minimal 37C,0.16322612050950217,pykF,True
+b1854,glucose M9 minimal 37C,0.16322612050950217,,False
+b1623,glucose M9 minimal 37C,0.15021241952029998,add,True
+b0411,glucose M9 minimal 37C,0.13495407162543038,tsx,True
+b0684,glucose M9 minimal 37C,0.09998021341974804,fldA,True
+b2895,glucose M9 minimal 37C,0.09998021341974804,,False
+b1014,glucose M9 minimal 37C,0.06582706874020083,putA,True
+b2297,glucose M9 minimal 37C,0.062390496126827025,pta,True
+b0462,glucose M9 minimal 37C,0.0534813330689074,,False
+b2470,glucose M9 minimal 37C,0.0534813330689074,acrD,True
+b3528,glucose M9 minimal 42C thermal,0.8136364621115613,dctA,True
+b2393,glucose M9 minimal 42C thermal,0.7603300899113234,nupC,True
+b4077,glucose M9 minimal 42C thermal,0.4676104086725544,gltP,True
+b2297,glucose M9 minimal 42C thermal,0.41749285167738825,pta,True
+b2215,glucose M9 minimal 42C thermal,0.40249809722223306,,False
+b0929,glucose M9 minimal 42C thermal,0.40249809722223306,ompF,True
+b0928,glucose M9 minimal 42C thermal,0.39704198872332874,aspC,True
+b4382,glucose M9 minimal 42C thermal,0.38291515950459354,deoA,True
+b3749,glucose M9 minimal 42C thermal,0.3722927805597553,rbsA,True
+b3751,glucose M9 minimal 42C thermal,0.3722927805597553,rbsB,True
+b3750,glucose M9 minimal 42C thermal,0.3722927805597553,rbsC,True
+b3748,glucose M9 minimal 42C thermal,0.3722927805597553,rbsD,True
+b3941,glucose M9 minimal 42C thermal,0.3321808974227781,,False
+b3939,glucose M9 minimal 42C thermal,0.3321808974227781,metB,True
+b4013,glucose M9 minimal 42C thermal,0.3321808974227781,metA,True
+b3926,glycerol M9 minimal 37C,0.6317826969023004,glpK,True
+b3426,glycerol M9 minimal 37C,0.4054831812913568,glpD,True
+b3564,glycerol M9 minimal 37C,0.18193312499904693,xylB,True
+b4069,glycerol M9 minimal 37C,0.04076663765472523,,False
+b2215,glycerol M9 minimal 37C,0.038245166219409134,,False
+b0929,glycerol M9 minimal 37C,0.038245166219409134,ompF,True
+b3115,glycerol M9 minimal 37C,0.03785629943355792,tdcD,True
+b1849,glycerol M9 minimal 37C,0.03785629943355792,,False
+b2297,glycerol M9 minimal 37C,0.03785629943355792,pta,True
+b0411,glycerol M9 minimal 37C,0.03659980867476552,tsx,True
+b0123,glycerol M9 minimal 37C,0.032459867887155505,cueO,True
+b4077,glycerol M9 minimal 37C,0.031591860425538916,gltP,True
+b3428,glycerol M9 minimal 37C,0.031591860425538916,glgP,True
+b3089,glycerol M9 minimal 37C,0.031591860425538916,sstT,True
+b4067,glycerol M9 minimal 37C,0.031591860425538916,,False

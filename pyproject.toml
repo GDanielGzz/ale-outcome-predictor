@@ -1,0 +1,82 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ale-outcome-predictor"
+version = "0.0.1"
+description = "GSM-feature-conditioned, ALEdb-trained predictor of the genes most likely to acquire causal mutations under a defined adaptive-laboratory-evolution selection."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Daniel González Lozano" },  # ORCID 0009-0002-1737-276X
+]
+keywords = [
+    "adaptive laboratory evolution",
+    "genome-scale metabolic model",
+    "flux balance analysis",
+    "strain design",
+    "machine learning",
+    "cobrapy",
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+# Runtime deps are intentionally light for the scaffold. cobrapy pins land in
+# 15.3 (feature_engineer) and lightgbm/sklearn pins firm up in 15.4
+# (baseline_model). Versions below are floors, not locks — a uv/conda lock is
+# the reproducible-env deliverable (see README "Acceptance test", repo gate 4).
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scikit-learn>=1.3",
+    "cobra>=0.29",          # cobrapy: GSM I/O + FVA/FBA feature backbone
+]
+
+[project.optional-dependencies]
+models = [
+    "lightgbm>=4.0",        # gradient-boosted-tree baseline (15.4)
+]
+dev = [
+    "pytest>=7.4",
+    "ruff>=0.4",
+    "mypy>=1.8",
+]
+notebooks = [
+    "jupyterlab>=4.0",
+    "matplotlib>=3.7",
+    "seaborn>=0.13",
+]
+
+[project.urls]
+Homepage = "https://github.com/GDanielGzz/ale-outcome-predictor"
+Repository = "https://github.com/GDanielGzz/ale-outcome-predictor"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ale_outcome_predictor"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+addopts = "-ra -q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_unused_ignores = true
+ignore_missing_imports = true   # cobra/lightgbm ship partial or no stubs
