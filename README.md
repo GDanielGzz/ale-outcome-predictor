@@ -1,5 +1,7 @@
 # ALE outcome predictor
 
+[![CI](https://github.com/GDanielGzz/ale-outcome-predictor/actions/workflows/ci.yml/badge.svg)](https://github.com/GDanielGzz/ale-outcome-predictor/actions/workflows/ci.yml)
+
 **Predict which genes a genome is most likely to mutate under a defined adaptive-laboratory-evolution (ALE) selection — conditioned on genome-scale metabolic-model (GSM) flux features.**
 
 > Status: **working end-to-end** on **five real ALEdb *E. coli* selections** — glucose,
@@ -172,9 +174,12 @@ Requires Python ≥ 3.10.
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
-pip install -e ".[dev,models]"          # cobra, scikit-learn, lightgbm, pandas
-pip install pyarrow matplotlib          # feature cache + figures
+pip install -e ".[dev,models]"          # cobra, scikit-learn, lightgbm, pandas, pyarrow, pytest
+pip install matplotlib                  # figures (scripts/)
 ```
+
+Optional extras: `.[sequence]` (Biopython, biophysical sequence features) and `.[esm]`
+(torch + transformers for ESM2 embeddings — run locally / on GPU, not in CI).
 
 ## Quickstart
 
@@ -197,8 +202,11 @@ res.importances                          # feature importances
 Run the tests:
 
 ```bash
-PYTHONPATH=src pytest          # core unit tests + a fast e_coli_core end-to-end pass
+pytest                         # core unit tests + a fast e_coli_core end-to-end pass
 ```
+
+CI ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) runs the same suite on Python
+3.10–3.12 on pushes to `master` and on pull requests.
 
 ## Data & licensing
 
