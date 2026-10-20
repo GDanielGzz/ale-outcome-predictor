@@ -163,8 +163,7 @@ ale-outcome-predictor/
 ├── tests/                         # pure-Python core + fast end-to-end (e_coli_core) tests
 ├── figures/                       # rendered result figures
 ├── report/                        # metrics.json, ranked_predictions.csv, methods note
-├── data/                          # GSM/ALEdb pulls — gitignored, re-fetchable
-│   └── HOWTO_PULL.md               # ALEdb account export -> drop-in (4 steps)
+├── data/                          # GSM/ALEdb pulls — gitignored, not in the public repo
 └── features/                      # cached feature matrix — gitignored
 ```
 
@@ -213,6 +212,7 @@ CI ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) runs the same suite 
 - The committed `corpus/curated_ale_corpus.csv` is transcribed from **published** ALE studies (LaCroix 2015, Herring 2006, Cheng/Conrad 2014, Tenaillon 2012, Sandberg 2014), each row cited — so it is redistributable. See `corpus/CURATION.md`.
 - **ALEdb** (http://aledb.org) is the full training corpus; bulk-export licensing is unverified, so it is **never committed**. `data_loader.load_aledb()` reads a local pull (`data/HOWTO_PULL.md`); the canonical schema is identical to the corpus, so switching sources is a one-line change.
 - **GSMs** come from the cobrapy model repository and are re-fetchable; `data/` is gitignored.
+- The `data/` helper files referenced in the code and docs (`HOWTO_PULL.md`, `HOWTO_SEQUENCE_FEATURES.md`, `model_gene_uniprot.csv`) belong to private research and are not included in this public repository. The committed corpus and feature matrix are enough to run the pipeline and tests; the ALEdb and ESM2 paths need them and are available on request.
 
 ## Acceptance test
 
