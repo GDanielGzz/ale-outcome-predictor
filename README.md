@@ -1,5 +1,7 @@
 # ALE outcome predictor
 
+[![CI](https://github.com/GDanielGzz/ale-outcome-predictor/actions/workflows/ci.yml/badge.svg)](https://github.com/GDanielGzz/ale-outcome-predictor/actions/workflows/ci.yml)
+
 **Predict which genes a genome is most likely to mutate under a defined adaptive-laboratory-evolution (ALE) selection — conditioned on genome-scale metabolic-model (GSM) flux features.**
 
 > Status: **working end-to-end** on **five real ALEdb *E. coli* selections** — glucose,
@@ -161,8 +163,7 @@ ale-outcome-predictor/
 ├── tests/                         # pure-Python core + fast end-to-end (e_coli_core) tests
 ├── figures/                       # rendered result figures
 ├── report/                        # metrics.json, ranked_predictions.csv, methods note
-├── data/                          # GSM/ALEdb pulls — gitignored, re-fetchable
-│   └── HOWTO_PULL.md               # ALEdb account export -> drop-in (4 steps)
+├── data/                          # GSM/ALEdb pulls — gitignored, not in the public repo
 └── features/                      # cached feature matrix — gitignored
 ```
 
@@ -172,9 +173,12 @@ Requires Python ≥ 3.10.
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
-pip install -e ".[dev,models]"          # cobra, scikit-learn, lightgbm, pandas
-pip install pyarrow matplotlib          # feature cache + figures
+pip install -e ".[dev,models]"          # cobra, scikit-learn, lightgbm, pandas, pyarrow, pytest
+pip install matplotlib                  # figures (scripts/)
 ```
+
+Optional extras: `.[sequence]` (Biopython, biophysical sequence features) and `.[esm]`
+(torch + transformers for ESM2 embeddings — run locally / on GPU, not in CI).
 
 ## Quickstart
 
@@ -197,14 +201,18 @@ res.importances                          # feature importances
 Run the tests:
 
 ```bash
-PYTHONPATH=src pytest          # core unit tests + a fast e_coli_core end-to-end pass
+pytest                         # core unit tests + a fast e_coli_core end-to-end pass
 ```
+
+CI ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) runs the same suite on Python
+3.10–3.12 on pushes to `master` and on pull requests.
 
 ## Data & licensing
 
 - The committed `corpus/curated_ale_corpus.csv` is transcribed from **published** ALE studies (LaCroix 2015, Herring 2006, Cheng/Conrad 2014, Tenaillon 2012, Sandberg 2014), each row cited — so it is redistributable. See `corpus/CURATION.md`.
 - **ALEdb** (http://aledb.org) is the full training corpus; bulk-export licensing is unverified, so it is **never committed**. `data_loader.load_aledb()` reads a local pull (`data/HOWTO_PULL.md`); the canonical schema is identical to the corpus, so switching sources is a one-line change.
 - **GSMs** come from the cobrapy model repository and are re-fetchable; `data/` is gitignored.
+- The `data/` helper files referenced in the code and docs (`HOWTO_PULL.md`, `HOWTO_SEQUENCE_FEATURES.md`, `model_gene_uniprot.csv`) belong to private research and are not included in this public repository. The committed corpus and feature matrix are enough to run the pipeline and tests; the ALEdb and ESM2 paths need them and are available on request.
 
 ## Acceptance test
 
